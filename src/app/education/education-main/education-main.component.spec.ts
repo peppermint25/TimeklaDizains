@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrimarySchoolComponent } from './primary-school.component';
+import { EducationMainComponent } from './education-main.component';
 
-describe('PrimarySchoolComponent', () => {
-  let component: PrimarySchoolComponent;
-  let fixture: ComponentFixture<PrimarySchoolComponent>;
+describe('EducationMainComponent', () => {
+  let component: EducationMainComponent;
+  let fixture: ComponentFixture<EducationMainComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PrimarySchoolComponent]
+      imports: [EducationMainComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PrimarySchoolComponent);
+    fixture = TestBed.createComponent(EducationMainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

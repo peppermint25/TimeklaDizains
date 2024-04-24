@@ -1,0 +1,11 @@
+@mixin apply-theme($background-color, $subnav-color, $navbar-color){
+  --background-color: $background-color;
+  --subnav-color: $subnav-color;
+  --navbar-color: $navbar-color;
+
+  :root{
+    --background-color: $background-color;
+    --subnav-color: $subnav-color;
+    --navbar-color: $navbar-color;
+  }
+}

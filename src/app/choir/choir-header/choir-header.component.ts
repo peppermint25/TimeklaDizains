@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-choir-header',
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  templateUrl: './choir-header.component.html',
+  styleUrl: './choir-header.component.scss'
 })
-export class HeaderComponent {
+export class ChoirHeaderComponent {
 
 }

@@ -1,0 +1,30 @@
+@import "variables";
+@import "about_variables";
+
+
+
+.component {
+  // display: flex;
+  // flex-direction: row;
+  // gap: 10px;
+
+
+  .container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .left{
+      background-color: var(--background-color);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .right{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
