@@ -1,0 +1,21 @@
+@import '../../scss/main';
+@import '../../scss/choir_variables.scss';
+
+.sub-navbar{
+  background-color: $subnav-light;
+
+  a{
+    background-color: $background-light;
+    color: $navbar-dark;
+
+    
+    &:hover{
+      // background-color: $navbar-light;
+      color: $navbar-dark;
+    }
+    &.active{
+      background-color: $navbar-light;
+      color: white;
+    }
+  }
+}

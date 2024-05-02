@@ -1,0 +1,11 @@
+@import '../../scss/main';
+@import '../../scss/about_variables';
+
+.sub-navbar{
+  background-color: $subnav-light;
+
+  a{
+    color: $navbar-dark;
+    background-color: $background-light;
+  }
+}
