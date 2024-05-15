@@ -1,0 +1,27 @@
+@import "variables";
+@import "about_variables";
+
+
+
+.component {
+  // display: flex;
+
+
+  .container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .left{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .right{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
