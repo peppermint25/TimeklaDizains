@@ -1,1 +1,6 @@
 @import "../../scss/_main.scss";
+@import "../../scss/choir_variables";
+
+a{
+  color: $navbar-dark;
+}
