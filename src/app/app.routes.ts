@@ -23,7 +23,7 @@ export const routes: Routes = [
       { path: 'university', component: UniversityComponent}
     ]},
     { path: 'education', component: EducationMainComponent, children: [
-      { path: '', redirectTo: 'high-school', pathMatch: 'full'},
+      { path: '', redirectTo: 'primary-school', pathMatch: 'full'},
       { path: 'high-school', component: HighSchoolComponent },
       { path: 'secondary-school', component: SecondarySchoolComponent },
       { path: 'primary-school', component: PrimarySchoolComponent }

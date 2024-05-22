@@ -46,15 +46,12 @@
           }
         }
         .list{
-          ul{
-            // list-style-type:georgian;
-            // padding-left: 20px;
-            
-            li{
-              margin: 5px 0px;
-              font-size: 18px;
-            }
+          h3{
+            font-size: 22px;
+            // font-weight: 500;
+            // margin: 5px 0px;
           }
+
         }
       }
     }
@@ -119,7 +116,6 @@
   padding: 10px 20px;
   align-items: center;
   display: flex;
-  height: 2vh;
   background-color: antiquewhite;
   font-size: 18px;
   gap: 15px;
