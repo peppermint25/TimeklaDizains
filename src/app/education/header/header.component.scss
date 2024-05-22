@@ -7,5 +7,14 @@
   a{
     color: $education-navbar-dark;
     background-color: $education-background-light;
+
+    &:hover{
+      background-color: $education-navbar-light;
+      color: white;
+    }
+    &.active{
+      background-color: $education-navbar-light;
+      color: white;
+    }
   }
 }

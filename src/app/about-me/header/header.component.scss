@@ -7,5 +7,14 @@
   a{
     color: $about-navbar-dark;
     background-color: $about-background-light;
+
+    &:hover{
+      background-color: $about-navbar-light;
+      color: white;
+    }
+    &.active{
+      background-color: $about-navbar-light;
+      color: white;
+    }
   }
 }
