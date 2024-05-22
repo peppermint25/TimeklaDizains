@@ -4,32 +4,71 @@
 @import '../../scss/education_variables';
 
 
-.header{
-  font-weight: 700;
-  padding: 10px 20px;
-  align-items: center;
-  display: flex;
-  background-color: antiquewhite;
-  font-size: 18px;
-  gap: 15px;
+.header.choir{
 
-// &.choir{
-//   background-color: ;
-// }
-
-  .title{
-  }
+    background-color: $choir-navbar-light;
+    color: white;
 
   .nav-buttons{
-    display: flex;
-    gap: 10px;
-
     a{
-      text-decoration: none;
-      padding: 5px;
-      border-radius: 8px;
-      background-color: rgb(255, 255, 255);
-      color: rgb(0, 0, 0);
+      background-color: $choir-background-light;
+      color: $choir-navbar-dark;
+
+      &:hover{
+        background-color: $choir-subnav-light;
+        color: $choir-navbar-dark;
+      }
+
+      &.active{
+        background-color: $choir-subnav-light;
+        color: $choir-navbar-dark;
+      }
+    }
+  }
+}
+
+.header.about{
+
+    background-color: $about-navbar-light;
+    color: white;
+
+  .nav-buttons{
+    a{
+      background-color: $about-background-light;
+      color: $about-navbar-dark;
+
+      &:hover{
+        background-color: $about-subnav-light;
+        color: $about-navbar-dark;
+      }
+
+      &.active{
+        background-color: $about-subnav-light;
+        color: $about-navbar-dark;
+      }
+    }
+  }
+}
+
+.header.education{
+
+    background-color: $education-navbar-light;
+    color: white;
+
+  .nav-buttons{
+    a{
+      background-color: $education-background-light;
+      color: $education-navbar-dark;
+
+      &:hover{
+        background-color: $education-subnav-light;
+        color: $education-navbar-dark;
+      }
+
+      &.active{
+        background-color: $education-subnav-light;
+        color: $education-navbar-dark;
+      }
     }
   }
 }

@@ -132,8 +132,8 @@
       text-decoration: none;
       padding: 5px;
       border-radius: 8px;
-      background-color: rgb(255, 255, 255);
-      color: rgb(0, 0, 0);
+      // background-color: rgb(255, 255, 255);
+      // color: rgb(0, 0, 0);
     }
   }
 }
@@ -143,7 +143,6 @@
   padding: 10px 20px;
   display: flex;
   gap: 10px;
-  background-color: rgb(251, 237, 222);
   align-items: center;
 
   .nav-buttons{
