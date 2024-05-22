@@ -2,19 +2,19 @@
 @import '../../scss/choir_variables.scss';
 
 .sub-navbar{
-  background-color: $subnav-light;
+  background-color: $choir-subnav-light;
 
   a{
-    background-color: $background-light;
-    color: $navbar-dark;
+    background-color: $choir-background-light;
+    color: $choir-navbar-dark;
 
     
     &:hover{
       // background-color: $navbar-light;
-      color: $navbar-dark;
+      color: $choir-navbar-dark;
     }
     &.active{
-      background-color: $navbar-light;
+      background-color: $choir-navbar-light;
       color: white;
     }
   }

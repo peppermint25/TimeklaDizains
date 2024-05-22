@@ -2,10 +2,10 @@
 @import '../../scss/about_variables';
 
 .sub-navbar{
-  background-color: $subnav-light;
+  background-color: $about-subnav-light;
 
   a{
-    color: $navbar-dark;
-    background-color: $background-light;
+    color: $about-navbar-dark;
+    background-color: $about-background-light;
   }
 }

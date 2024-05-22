@@ -1,4 +1,8 @@
-<div class="header">
+<div class="header"   [ngClass]="{
+  'choir': isChoirRoute(),
+  'education': isEducationRoute(),
+  'about': isAboutMeRoute()
+}">
   <div class="title">
     Mans ceļš uz Latvijas Universitāti
   </div>

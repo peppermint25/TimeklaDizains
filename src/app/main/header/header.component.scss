@@ -1,1 +1,35 @@
 @import '../../scss/main';
+@import '../../scss/about_variables';
+@import '../../scss/choir_variables';
+@import '../../scss/education_variables';
+
+
+.header{
+  font-weight: 700;
+  padding: 10px 20px;
+  align-items: center;
+  display: flex;
+  background-color: antiquewhite;
+  font-size: 18px;
+  gap: 15px;
+
+// &.choir{
+//   background-color: ;
+// }
+
+  .title{
+  }
+
+  .nav-buttons{
+    display: flex;
+    gap: 10px;
+
+    a{
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 8px;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+    }
+  }
+}

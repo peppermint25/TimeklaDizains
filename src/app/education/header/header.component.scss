@@ -2,10 +2,10 @@
 @import '../../scss/education_variables';
 
 .sub-navbar{
-  background-color: $subnav-light;
+  background-color: $education-subnav-light;
 
   a{
-    color: $navbar-dark;
-    background-color: $background-light;
+    color: $education-navbar-dark;
+    background-color: $education-background-light;
   }
 }
