@@ -10,8 +10,8 @@
 
     
     &:hover{
-      // background-color: $navbar-light;
-      color: $choir-navbar-dark;
+      background-color: $choir-navbar-light;
+      color: white;
     }
     &.active{
       background-color: $choir-navbar-light;
