@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
 import { Location, CommonModule } from '@angular/common';
@@ -12,6 +12,8 @@ import { filter } from 'rxjs/operators';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('header')
+  header!: ElementRef;
   currentRoute: string = '';
 
   constructor(private router: Router, private location: Location) {}
@@ -43,5 +45,10 @@ export class HeaderComponent implements OnInit {
     // Method to check if the current route starts with 'about-me'
     isAboutMeRoute(): boolean {
       return this.currentRoute.startsWith('/about-me');
+    }
+
+    toggleTheme(): void {
+      console.log('Theme toggled');
+      this.header.nativeElement.classList.toggle('dark');
     }
 }

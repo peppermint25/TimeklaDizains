@@ -1,4 +1,4 @@
-<div class="header"   [ngClass]="{
+<div #header class="header"   [ngClass]="{
   'choir': isChoirRoute(),
   'education': isEducationRoute(),
   'about': isAboutMeRoute()
@@ -10,5 +10,8 @@
     <a routerLink="/about-me" routerLinkActive="active">Par Mani</a>
     <a routerLink="/choir" routerLinkActive="active">Kora ceļš</a>
     <a routerLink="/education" routerLinkActive="active">Izglītības ceļš</a>
+  </div>
+  <div class="theme-button" (click)="toggleTheme()">
+    <button>Mainīt tēmu</button>
   </div>
 </div>

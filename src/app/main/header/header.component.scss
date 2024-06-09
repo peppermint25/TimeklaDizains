@@ -27,6 +27,28 @@
   }
 }
 
+.header.choir.dark{
+      background-color: $choir-navbar-dark;
+      color: white;
+  
+    .nav-buttons{
+      a{
+        background-color: $choir-background-dark;
+        color: $choir-navbar-light;
+  
+        &:hover{
+          background-color: $choir-subnav-dark;
+          color: $choir-navbar-light;
+        }
+  
+        &.active{
+          background-color: $choir-subnav-dark;
+          color: $choir-navbar-light;
+        }
+      }
+    }
+}
+
 .header.about{
 
     background-color: $about-navbar-light;
@@ -50,6 +72,28 @@
   }
 }
 
+.header.about.dark{
+      background-color: $about-navbar-dark;
+      color: white;
+  
+    .nav-buttons{
+      a{
+        background-color: $about-background-dark;
+        color: $about-navbar-light;
+  
+        &:hover{
+          background-color: $about-subnav-dark;
+          color: $about-navbar-light;
+        }
+  
+        &.active{
+          background-color: $about-subnav-dark;
+          color: $about-navbar-light;
+        }
+      }
+    }
+}
+
 .header.education{
 
     background-color: $education-navbar-light;
@@ -71,4 +115,26 @@
       }
     }
   }
+}
+
+.header.education.dark{
+      background-color: $education-navbar-dark;
+      color: white;
+  
+    .nav-buttons{
+      a{
+        background-color: $education-background-dark;
+        color: $education-navbar-light;
+  
+        &:hover{
+          background-color: $education-subnav-dark;
+          color: $education-navbar-light;
+        }
+  
+        &.active{
+          background-color: $education-subnav-dark;
+          color: $education-navbar-light;
+        }
+      }
+    }
 }
