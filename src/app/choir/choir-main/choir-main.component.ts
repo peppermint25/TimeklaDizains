@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import { ChoirHeaderComponent } from '../choir-header/choir-header.component';
 import { RouterOutlet } from '@angular/router';
+import { subscribe } from 'diagnostics_channel';
 
 @Component({
   selector: 'app-choir-main',
@@ -14,6 +15,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class ChoirMainComponent implements OnInit{
   private themeSubscription: Subscription | undefined;
+  theme: string | null = localStorage.getItem('theme');
 
   constructor(
     private themeService: ThemeService,
@@ -23,8 +25,10 @@ export class ChoirMainComponent implements OnInit{
 
   ngOnInit(): void {
     console.log('ChoirHeaderComponent initialized');
+    
     this.themeSubscription = this.themeService.theme$.subscribe(theme => {
       console.log('ChoirHeaderComponent theme subscription');
+      console.log('Theme: ', theme);
       this.applyTheme(theme);
     });
 
