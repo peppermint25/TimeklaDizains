@@ -14,7 +14,7 @@ import { subscribe } from 'diagnostics_channel';
   styleUrl: './choir-main.component.scss'
 })
 export class ChoirMainComponent implements OnInit{
-  private themeSubscription: Subscription | undefined;
+  private themeSubscription!: Subscription;
   theme: string | null = localStorage.getItem('theme');
   @ViewChild('body') header!: ElementRef;
 

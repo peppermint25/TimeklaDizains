@@ -12,7 +12,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './choir-header.component.scss'
 })
 export class ChoirHeaderComponent implements OnInit, OnDestroy{
-  private themeSubscription: Subscription | undefined;
+  private themeSubscription!: Subscription;
   @ViewChild('sub-navbar') header!: ElementRef;
 
   constructor(
