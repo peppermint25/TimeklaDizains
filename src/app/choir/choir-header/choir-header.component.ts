@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -9,31 +9,32 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './choir-header.component.scss'
 })
 export class ChoirHeaderComponent implements OnInit, OnDestroy{
-storageSubscription: any;
 
-ngOnInit(): void {
-  console.log('ChoirHeaderComponent initialized');
-  this.updateTheme();
+  constructor(private renderer: Renderer2) {}
 
-  if (typeof window !== 'undefined') {
-    this.storageSubscription = window.addEventListener('storage', (event) => {
-      if (event.key === 'theme') {
-        this.updateTheme();
-      }
-    });
+  ngOnInit(): void {
+    console.log('ChoirHeaderComponent initialized');
+    this.applyTheme(localStorage.getItem('theme'));
+
+    window.addEventListener('storage', this.handleStorageChange.bind(this));
   }
-}
 
-ngOnDestroy(): void {
-  if (typeof window !== 'undefined') {
-    window.removeEventListener('storage', this.storageSubscription);
+  ngOnDestroy(): void {
+    window.removeEventListener('storage', this.handleStorageChange.bind(this));
   }
-}
 
-updateTheme(): void {
-  if (typeof window !== 'undefined') {
-    localStorage.getItem('theme') === 'dark' ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+  private handleStorageChange(event: StorageEvent): void {
+    if (event.key === 'theme') {
+      this.applyTheme(event.newValue);
+    }
   }
-}
+
+  private applyTheme(theme: string | null): void {
+    if (theme === 'dark') {
+      this.renderer.addClass(document.body, 'dark');
+    } else {
+      this.renderer.removeClass(document.body, 'dark');
+    }
+  }
 
 }
