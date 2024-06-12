@@ -1,5 +1,9 @@
 @import '../../scss/education_variables';
 
-.body{
+.sub-body{
   background-color: $education-background-light;
+}
+
+.sub-body.dark{
+  background-color: $education-background-dark;
 }

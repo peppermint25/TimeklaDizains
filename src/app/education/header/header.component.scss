@@ -18,3 +18,21 @@
     }
   }
 }
+
+.sub-navbar.dark{
+  background-color: $education-subnav-dark;
+
+  a{
+    color: $education-navbar-dark;
+    background-color: $education-background-dark;
+
+    &:hover{
+      background-color: $education-navbar-dark;
+      color: white;
+    }
+    &.active{
+      background-color: $education-navbar-dark;
+      color: white;
+    }
+  }
+}
