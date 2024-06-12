@@ -15,8 +15,6 @@ import { subscribe } from 'diagnostics_channel';
 })
 export class ChoirMainComponent implements OnInit{
   private themeSubscription: Subscription | undefined;
-  theme: string | null = localStorage.getItem('theme');
-  @ViewChild('body') header!: ElementRef;
 
   constructor(
     private themeService: ThemeService,
@@ -26,12 +24,12 @@ export class ChoirMainComponent implements OnInit{
 
   ngOnInit(): void {
     console.log('ChoirMainComponent initialized');
-    
     this.themeSubscription = this.themeService.theme$.subscribe(theme => {
       console.log('ChoirMainComponent theme subscription');
-      console.log('Theme: ', theme);
       this.applyTheme(theme);
     });
+
+    // Apply initial theme
     this.applyTheme(localStorage.getItem('theme'));
   }
 
