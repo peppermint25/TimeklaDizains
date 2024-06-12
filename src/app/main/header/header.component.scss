@@ -47,12 +47,12 @@
   
         &:hover{
           background-color: $choir-subnav-dark;
-          color: $choir-navbar-light;
+          color: $choir-navbar-dark;
         }
   
         &.active{
           background-color: $choir-subnav-dark;
-          color: $choir-navbar-light;
+          color: $choir-navbar-dark;
         }
       }
     }
@@ -62,7 +62,7 @@
   
         &:hover{
           background-color: $choir-subnav-dark;
-          color: $choir-navbar-light;
+          color: $choir-navbar-dark;
         }
       }
 }
@@ -106,26 +106,26 @@
     .nav-buttons{
       a{
         background-color: $about-background-dark;
-        color: $about-navbar-light;
+        color: $about-navbar-dark;
   
         &:hover{
           background-color: $about-subnav-dark;
-          color: $about-navbar-light;
+          color: $about-navbar-dark;
         }
   
         &.active{
           background-color: $about-subnav-dark;
-          color: $about-navbar-light;
+          color: $about-navbar-dark;
         }
       }
     }
     .theme-button{
         background-color: $about-background-dark;
-        color: $about-navbar-light;
+        color: $about-navbar-dark;
   
         &:hover{
           background-color: $about-subnav-dark;
-          color: $about-navbar-light;
+          color: $about-navbar-dark;
         }
       }
 }
@@ -169,26 +169,26 @@
     .nav-buttons{
       a{
         background-color: $education-background-dark;
-        color: $education-navbar-light;
+        color: $education-navbar-dark;
   
         &:hover{
           background-color: $education-subnav-dark;
-          color: $education-navbar-light;
+          color: $education-navbar-dark;
         }
   
         &.active{
           background-color: $education-subnav-dark;
-          color: $education-navbar-light;
+          color: $education-navbar-dark;
         }
       }
     }
     .theme-button{
         background-color: $education-background-dark;
-        color: $education-navbar-light;
+        color: $education-navbar-dark;
   
         &:hover{
           background-color: $education-subnav-dark;
-          color: $education-navbar-light;
+          color: $education-navbar-dark;
         }
       }
 }
