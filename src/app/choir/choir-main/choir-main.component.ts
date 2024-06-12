@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChoirHeaderComponent } from '../choir-header/choir-header.component';
 import { RouterOutlet } from '@angular/router';
 
@@ -9,6 +9,9 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './choir-main.component.html',
   styleUrl: './choir-main.component.scss'
 })
-export class ChoirMainComponent {
+export class ChoirMainComponent implements OnInit{
 
+  ngOnInit(): void {
+      localStorage.getItem('theme') === 'dark' ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+  }
 }
