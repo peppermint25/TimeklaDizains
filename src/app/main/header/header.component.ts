@@ -61,7 +61,6 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleTheme(): void {
-    console.log('Theme toggled');
     this.header.nativeElement.classList.toggle('dark');
     this.themeService.setTheme(this.header.nativeElement.classList.contains('dark') ? 'dark' : 'light');
     console.log('Theme set to: ', this.header.nativeElement.classList.contains('dark') ? 'dark' : 'light');
