@@ -1,0 +1,15 @@
+{
+  "routes": [
+    "/",
+    "/about-me",
+    "/about-me/choir",
+    "/about-me/university",
+    "/choir",
+    "/choir/high-school-choir",
+    "/choir/primary-school-choir",
+    "/education",
+    "/education/high-school",
+    "/education/primary-school",
+    "/education/secondary-school"
+  ]
+}
