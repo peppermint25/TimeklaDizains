@@ -4,7 +4,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
 import { Location, CommonModule } from '@angular/common';
 import { filter, Subscription } from 'rxjs';
-import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -18,12 +17,10 @@ export class HeaderComponent implements OnInit {
   currentRoute: string = '';
   isDarkTheme: boolean = false;
   private themeSubscription: Subscription | undefined;
-  renderer: any;
 
   constructor(
     private router: Router,
     private location: Location,
-    @Inject(DOCUMENT) private document: Document,
     private themeService: ThemeService
   ) {}
 
@@ -51,17 +48,14 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  // Method to check if the current route starts with 'choir'
   isChoirRoute(): boolean {
     return this.currentRoute.startsWith('/choir');
   }
 
-  // Method to check if the current route starts with 'education'
   isEducationRoute(): boolean {
     return this.currentRoute.startsWith('/education');
   }
 
-  // Method to check if the current route starts with 'about-me'
   isAboutMeRoute(): boolean {
     return this.currentRoute.startsWith('/about-me');
   }

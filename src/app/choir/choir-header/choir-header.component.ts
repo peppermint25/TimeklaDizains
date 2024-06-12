@@ -21,7 +21,9 @@ export class ChoirHeaderComponent implements OnInit, OnDestroy{
   ) {}
 
   ngOnInit(): void {
+    console.log('ChoirHeaderComponent initialized');
     this.themeSubscription = this.themeService.theme$.subscribe(theme => {
+      console.log('ChoirHeaderComponent theme subscription');
       this.applyTheme(theme);
     });
 
