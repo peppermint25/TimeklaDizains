@@ -19,3 +19,21 @@
     }
   }
 }
+
+.sub-navbar.dark{
+  background-color: $choir-subnav-dark;
+
+  a{
+    background-color: $choir-background-dark;
+    color: $choir-navbar-light;
+
+    &:hover{
+      background-color: $choir-navbar-dark;
+      color: white;
+    }
+    &.active{
+      background-color: $choir-navbar-dark;
+      color: white;
+    }
+  }
+}
