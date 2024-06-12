@@ -18,3 +18,21 @@
     }
   }
 }
+
+.sub-navbar.dark{
+  background-color: $about-subnav-dark;
+
+  a{
+    color: $about-navbar-dark;
+    background-color: $about-background-dark;
+
+    &:hover{
+      background-color: $about-navbar-dark;
+      color: white;
+    }
+    &.active{
+      background-color: $about-navbar-dark;
+      color: white;
+    }
+  }
+}

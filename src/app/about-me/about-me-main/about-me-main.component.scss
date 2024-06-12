@@ -1,6 +1,10 @@
 @import '../../scss/about_variables';
 
-.body{
+.sub-body{
   background-color: $about-background-light;
   height: 100%;
+}
+
+.sub-body.dark{
+  background-color: $about-background-dark;
 }
