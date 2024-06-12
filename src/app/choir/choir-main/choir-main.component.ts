@@ -44,10 +44,11 @@ export class ChoirMainComponent implements OnInit{
   }
 
   private applyTheme(theme: string | null): void {
+    const body = this.document.querySelector('div.body');
     if (theme === 'dark') {
-      this.header.nativeElement.classList.add('dark');
+      this.renderer.addClass(body, 'dark');
     } else {
-      this.header.nativeElement.classList.remove('dark');
+      this.renderer.removeClass(body, 'dark');
     }
   }
 }
