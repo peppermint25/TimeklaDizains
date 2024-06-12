@@ -17,6 +17,7 @@ export class ThemeService {
   setTheme(theme: string): void {
     localStorage.setItem('theme', theme);
     this.themeSubject.next(theme);
+    console.log('Theme set to: ', theme);
   }
 
   private handleStorageChange(event: StorageEvent): void {
