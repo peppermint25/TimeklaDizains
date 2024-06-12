@@ -74,9 +74,9 @@ export class HeaderComponent implements OnInit {
 
   private applyTheme(theme: string | null): void {
     if (theme === 'dark') {
-      this.renderer.addClass(this.header.nativeElement, 'dark');
+      this.header.nativeElement.classList.add('dark');
     } else {
-      this.renderer.removeClass(this.header.nativeElement, 'dark');
+      this.header.nativeElement.classList.remove('dark');
     }
   }
 }
