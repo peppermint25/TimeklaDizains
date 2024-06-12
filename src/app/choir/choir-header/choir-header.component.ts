@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Renderer2, Inject, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, Inject, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './choir-header.component.html',
   styleUrl: './choir-header.component.scss'
 })
-export class ChoirHeaderComponent implements OnInit, OnDestroy{
+export class ChoirHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   private themeSubscription!: Subscription;
   @ViewChild('sub-navbar') header!: ElementRef;
 
@@ -23,6 +23,9 @@ export class ChoirHeaderComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     console.log('ChoirHeaderComponent initialized');
+  }
+
+  ngAfterViewInit(): void {
     this.themeSubscription = this.themeService.theme$.subscribe(theme => {
       console.log('ChoirHeaderComponent theme subscription', theme);
       this.applyTheme(theme);
