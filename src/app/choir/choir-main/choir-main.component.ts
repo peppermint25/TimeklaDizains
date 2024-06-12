@@ -32,9 +32,7 @@ export class ChoirMainComponent implements OnInit{
       console.log('Theme: ', theme);
       this.applyTheme(theme);
     });
-
-    // Apply initial theme
-    // this.applyTheme(localStorage.getItem('theme'));
+    this.applyTheme(localStorage.getItem('theme'));
   }
 
   ngOnDestroy(): void {
