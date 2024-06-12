@@ -38,10 +38,11 @@ export class ChoirHeaderComponent implements OnInit, OnDestroy{
   }
 
   private applyTheme(theme: string | null): void {
+    const subNavbar = this.document.querySelector('div.sub-navbar');
     if (theme === 'dark') {
-      this.renderer.addClass(this.document.body, 'dark');
+      this.renderer.addClass(subNavbar, 'dark');
     } else {
-      this.renderer.removeClass(this.document.body, 'dark');
+      this.renderer.removeClass(subNavbar, 'dark');
     }
   }
 
