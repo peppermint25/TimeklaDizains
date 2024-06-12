@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Renderer2, Inject, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
@@ -11,9 +11,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './choir-header.component.html',
   styleUrl: './choir-header.component.scss'
 })
-export class ChoirHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
-  private themeSubscription!: Subscription;
-  @ViewChild('sub-navbar') header!: ElementRef;
+export class ChoirHeaderComponent implements OnInit, OnDestroy{
+  private themeSubscription: Subscription | undefined;
 
   constructor(
     private themeService: ThemeService,
@@ -23,11 +22,8 @@ export class ChoirHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit(): void {
     console.log('ChoirHeaderComponent initialized');
-  }
-
-  ngAfterViewInit(): void {
     this.themeSubscription = this.themeService.theme$.subscribe(theme => {
-      console.log('ChoirHeaderComponent theme subscription', theme);
+      console.log('ChoirHeaderComponent theme subscription');
       this.applyTheme(theme);
     });
 
@@ -43,9 +39,10 @@ export class ChoirHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private applyTheme(theme: string | null): void {
     if (theme === 'dark') {
-      this.header.nativeElement.classList.add('dark');
+      this.renderer.addClass(this.document.body, 'dark');
     } else {
-      this.header.nativeElement.classList.remove('dark');
+      this.renderer.removeClass(this.document.body, 'dark');
     }
   }
+
 }

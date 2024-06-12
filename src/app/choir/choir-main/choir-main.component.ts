@@ -14,7 +14,7 @@ import { subscribe } from 'diagnostics_channel';
   styleUrl: './choir-main.component.scss'
 })
 export class ChoirMainComponent implements OnInit{
-  private themeSubscription!: Subscription;
+  private themeSubscription: Subscription | undefined;
   theme: string | null = localStorage.getItem('theme');
   @ViewChild('body') header!: ElementRef;
 
@@ -34,7 +34,7 @@ export class ChoirMainComponent implements OnInit{
     });
 
     // Apply initial theme
-    this.applyTheme(localStorage.getItem('theme'));
+    // this.applyTheme(localStorage.getItem('theme'));
   }
 
   ngOnDestroy(): void {
