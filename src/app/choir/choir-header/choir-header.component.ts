@@ -1,4 +1,7 @@
-import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
+import { Subscription } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -9,31 +12,34 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './choir-header.component.scss'
 })
 export class ChoirHeaderComponent implements OnInit, OnDestroy{
+  private themeSubscription: Subscription | undefined;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private themeService: ThemeService,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
   ngOnInit(): void {
-    console.log('ChoirHeaderComponent initialized');
-    this.applyTheme(localStorage.getItem('theme'));
+    this.themeSubscription = this.themeService.theme$.subscribe(theme => {
+      this.applyTheme(theme);
+    });
 
-    window.addEventListener('storage', this.handleStorageChange.bind(this));
+    // Apply initial theme
+    this.applyTheme(localStorage.getItem('theme'));
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('storage', this.handleStorageChange.bind(this));
-  }
-
-  private handleStorageChange(event: StorageEvent): void {
-    if (event.key === 'theme') {
-      this.applyTheme(event.newValue);
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
     }
   }
 
   private applyTheme(theme: string | null): void {
     if (theme === 'dark') {
-      this.renderer.addClass(document.body, 'dark');
+      this.renderer.addClass(this.document.body, 'dark');
     } else {
-      this.renderer.removeClass(document.body, 'dark');
+      this.renderer.removeClass(this.document.body, 'dark');
     }
   }
 
