@@ -25,6 +25,15 @@
       }
     }
   }
+  .theme-button{
+      background-color: $choir-background-light;
+      color: $choir-navbar-dark;
+
+      &:hover{
+        background-color: $choir-subnav-light;
+        color: $choir-navbar-dark;
+      }
+    }
 }
 
 .header.choir.dark{
@@ -47,6 +56,15 @@
         }
       }
     }
+    .theme-button{
+        background-color: $choir-background-dark;
+        color: $choir-navbar-light;
+  
+        &:hover{
+          background-color: $choir-subnav-dark;
+          color: $choir-navbar-light;
+        }
+      }
 }
 
 .header.about{
@@ -70,6 +88,15 @@
       }
     }
   }
+  .theme-button{
+      background-color: $about-background-light;
+      color: $about-navbar-dark;
+
+      &:hover{
+        background-color: $about-subnav-light;
+        color: $about-navbar-dark;
+      }
+    }
 }
 
 .header.about.dark{
@@ -92,6 +119,15 @@
         }
       }
     }
+    .theme-button{
+        background-color: $about-background-dark;
+        color: $about-navbar-light;
+  
+        &:hover{
+          background-color: $about-subnav-dark;
+          color: $about-navbar-light;
+        }
+      }
 }
 
 .header.education{
@@ -115,6 +151,15 @@
       }
     }
   }
+  .theme-button{
+      background-color: $education-background-light;
+      color: $education-navbar-dark;
+
+      &:hover{
+        background-color: $education-subnav-light;
+        color: $education-navbar-dark;
+      }
+    }
 }
 
 .header.education.dark{
@@ -137,4 +182,13 @@
         }
       }
     }
+    .theme-button{
+        background-color: $education-background-dark;
+        color: $education-navbar-light;
+  
+        &:hover{
+          background-color: $education-subnav-dark;
+          color: $education-navbar-light;
+        }
+      }
 }

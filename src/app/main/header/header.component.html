@@ -3,15 +3,24 @@
   'education': isEducationRoute(),
   'about': isAboutMeRoute()
 }">
-  <div class="title">
-    Mans ceļš uz Latvijas Universitāti
+  <div class="left">
+    <div class="title">
+      Mans ceļš uz Latvijas Universitāti
+    </div>
+    <div class="nav-buttons">
+      <a routerLink="/about-me" routerLinkActive="active">Par Mani</a>
+      <a routerLink="/choir" routerLinkActive="active">Kora ceļš</a>
+      <a routerLink="/education" routerLinkActive="active">Izglītības ceļš</a>
+    </div>
   </div>
-  <div class="nav-buttons">
-    <a routerLink="/about-me" routerLinkActive="active">Par Mani</a>
-    <a routerLink="/choir" routerLinkActive="active">Kora ceļš</a>
-    <a routerLink="/education" routerLinkActive="active">Izglītības ceļš</a>
-  </div>
-  <div class="theme-button" (click)="toggleTheme()">
-    <button>Mainīt tēmu</button>
-  </div>
+  <div class="right">
+    @if (isDarkTheme){
+      <div class="theme-button" (click)="toggleTheme()">
+        Mainīt uz gaišo režīmu
+      </div>
+    } @else {
+      <div class="theme-button" (click)="toggleTheme()">
+        Mainīt uz tumšo režīmu
+      </div>
+    }
 </div>

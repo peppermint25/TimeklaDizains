@@ -15,21 +15,22 @@ export class HeaderComponent implements OnInit {
   @ViewChild('header')
   header!: ElementRef;
   currentRoute: string = '';
+  isDarkTheme: boolean = false;
 
   constructor(private router: Router, private location: Location) {}
 
   ngOnInit() {
-    // Capture the initial route
     this.currentRoute = this.location.path();
-    console.log(this.currentRoute);  // For debugging purposes
-
-    // Subscribe to NavigationEnd events to capture route changes
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       this.currentRoute = this.location.path();
-      console.log(this.currentRoute);  // For debugging purposes
     });
+    localStorage.getItem('theme') === 'dark' ? this.header.nativeElement.classList.add('dark') : this.header.nativeElement.classList.remove('dark');
+
+    if(localStorage.getItem('theme') === 'dark') {
+      this.isDarkTheme = true;
+    }
   }
 
     // Method to check if the current route starts with 'choir'
@@ -50,5 +51,6 @@ export class HeaderComponent implements OnInit {
     toggleTheme(): void {
       console.log('Theme toggled');
       this.header.nativeElement.classList.toggle('dark');
+      localStorage.setItem('theme', this.header.nativeElement.classList.contains('dark') ? 'dark' : 'light');
     }
 }
