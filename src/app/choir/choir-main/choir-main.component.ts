@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, Inject, ViewChild, ElementRef } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
@@ -16,6 +16,7 @@ import { subscribe } from 'diagnostics_channel';
 export class ChoirMainComponent implements OnInit{
   private themeSubscription: Subscription | undefined;
   theme: string | null = localStorage.getItem('theme');
+  @ViewChild('body') header!: ElementRef;
 
   constructor(
     private themeService: ThemeService,
@@ -24,10 +25,10 @@ export class ChoirMainComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    console.log('ChoirHeaderComponent initialized');
+    console.log('ChoirMainComponent initialized');
     
     this.themeSubscription = this.themeService.theme$.subscribe(theme => {
-      console.log('ChoirHeaderComponent theme subscription');
+      console.log('ChoirMainComponent theme subscription');
       console.log('Theme: ', theme);
       this.applyTheme(theme);
     });
@@ -44,9 +45,9 @@ export class ChoirMainComponent implements OnInit{
 
   private applyTheme(theme: string | null): void {
     if (theme === 'dark') {
-      this.renderer.addClass(this.document.body, 'dark');
+      this.header.nativeElement.classList.add('dark');
     } else {
-      this.renderer.removeClass(this.document.body, 'dark');
+      this.header.nativeElement.classList.remove('dark');
     }
   }
 }
