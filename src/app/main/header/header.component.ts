@@ -1,8 +1,8 @@
 import { ThemeService } from './../../services/theme.service';
-import { Component, ElementRef, OnInit, ViewChild, OnDestroy, Inject } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, OnDestroy, Inject, Renderer2 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
-import { Location, CommonModule } from '@angular/common';
+import { Location, CommonModule, DOCUMENT } from '@angular/common';
 import { filter, Subscription } from 'rxjs';
 
 @Component({
@@ -21,7 +21,9 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private location: Location,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit() {
@@ -32,13 +34,11 @@ export class HeaderComponent implements OnInit {
       this.currentRoute = this.location.path();
     });
 
-    // Subscribe to the theme observable
     this.themeSubscription = this.themeService.theme$.subscribe(theme => {
+      console.log('ChoirMainComponent theme subscription');
       this.applyTheme(theme);
-      this.isDarkTheme = theme === 'dark';
     });
 
-    // Apply initial theme
     this.applyTheme(localStorage.getItem('theme'));
   }
 
@@ -66,10 +66,11 @@ export class HeaderComponent implements OnInit {
   }
 
   private applyTheme(theme: string | null): void {
+    const header = this.document.querySelector('div.header');
     if (theme === 'dark') {
-      this.header.nativeElement.classList.add('dark');
+      this.renderer.addClass(header, 'dark');
     } else {
-      this.header.nativeElement.classList.remove('dark');
+      this.renderer.removeClass(header, 'dark');
     }
   }
 }
