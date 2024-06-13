@@ -136,7 +136,13 @@
     flex-direction: row;
 
     .title{
+      display: flex;
       font-size: 24px;
+    }
+
+    .title.short{
+      display: none;
+      font-size: 18px;
     }
 
     .nav-buttons{
@@ -150,10 +156,6 @@
     }
   }
 
-  @media screen and (max-width: 800px){
-    flex-direction: column;
-  }
-
   }
 
   .right{
@@ -163,6 +165,29 @@
       cursor: pointer;
       border: none;
     }
+  }
+
+  @media screen and (max-width: 800px)  {
+    flex-direction: column;
+    .left{
+      flex: 1 1 100%;
+      .title{
+        display: none;  
+      }
+      .title.short{
+        display: flex;
+      }
+    }
+    .right{
+      display: flex;
+
+      .theme-button{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    
   }
 }
 
